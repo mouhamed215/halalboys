@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulletin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f0f0f0;
+        }
+        .button {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bulletin</h1>
+        <p><a href="inscription.html">Ouvrir l'inscription</a></p>
+        <form>
+            <div class="grid">
+                <div>
+                    <label for="matricule">Matricule</label>
+                    <input type="text" id="matricule" name="matricule" placeholder="Entrez le matricule" required>
+                </div>
+                <div>
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Entrez le prénom" required>
+                </div>
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Entrez le nom" required>
+                </div>
+                <div>
+                    <label for="filiere">Filière</label>
+                    <select id="filiere" name="filiere" required>
+                        <option value="">Sélectionnez une filière</option>
+                        <option value="droit">Droit</option>
+                        <option value="management">Management</option>
+                        <option value="ingenierie">Ingénierie</option>
+                        <option value="art">Art</option>
+                        <option value="finance">Finance</option>
+                        <option value="grh">GRH</option>
+                        <option value="compta">Compta</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="niveau">Niveau</label>
+                    <select id="niveau" name="niveau" required>
+                        <option value="">Sélectionnez un niveau</option>
+                        <option value="licence1">Licence 1</option>
+                        <option value="licence2">Licence 2</option>
+                        <option value="licence3">Licence 3</option>
+                        <option value="master1">Master 1</option>
+                        <option value="master2">Master 2</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="profile">Profil</label>
+                    <select id="profile" name="profile" required>
+                        <option value="">Sélectionnez un profil</option>
+                        <option value="etudiant">Étudiant</option>
+                        <option value="secretaire">Secrétaire</option>
+                        <option value="administration">Administration</option>
+                    </select>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Modules</th>
+                        <th>Devoir</th>
+                        <th>Examen</th>
+                        <th>Moyenne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="module1" placeholder="Module 1"></td>
+                        <td><input type="number" name="devoir1" min="0" max="20"></td>
+                        <td><input type="number" name="examen1" min="0" max="20"></td>
+                        <td><input type="number" name="moyenne1" min="0" max="20" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="module2" placeholder="Module 2"></td>
+                        <td><input type="number" name="devoir2" min="0" max="20"></td>
+                        <td><input type="number" name="examen2" min="0" max="20"></td>
+                        <td><input type="number" name="moyenne2" min="0" max="20" readonly></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="module3" placeholder="Module 3"></td>
+                        <td><input type="number" name="devoir3" min="0" max="20"></td>
+                        <td><input type="number" name="examen3" min="0" max="20"></td>
+                        <td><input type="number" name="moyenne3" min="0" max="20" readonly></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" class="button">Valider</button>
+        </form>
+    </div>
+</body>
+</html>

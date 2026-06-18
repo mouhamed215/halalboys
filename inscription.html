@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .button {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulaire d'inscription</h1>
+        <p><a href="bulletin.html">Ouvrir le bulletin</a></p>
+        <form>
+            <label for="prenoms">Prénoms</label>
+            <input type="text" id="prenoms" name="prenoms" placeholder="Entrez vos prénoms" required>
+
+            <label for="numero">No</label>
+            <input type="text" id="numero" name="numero" placeholder="Entrez votre numéro" required>
+
+            <label for="login">Login</label>
+            <input type="text" id="login" name="login" placeholder="Entrez votre login" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
+
+            <label for="profile">Profil</label>
+            <select id="profile" name="profile" required>
+                <option value="">Sélectionnez un profil</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="secretaire">Secrétaire</option>
+                <option value="administration">Administration</option>
+            </select>
+
+            <label for="sexe">Sexe</label>
+            <select id="sexe" name="sexe" required>
+                <option value="">Sélectionnez le sexe</option>
+                <option value="masculin">Masculin</option>
+                <option value="feminin">Féminin</option>
+            </select>
+
+            <label for="nationalite">Nationalité</label>
+            <input type="text" id="nationalite" name="nationalite" placeholder="Entrez votre nationalité" required>
+
+            <button type="submit" class="button">Enregistrer</button>
+        </form>
+    </div>
+</body>
+</html>
