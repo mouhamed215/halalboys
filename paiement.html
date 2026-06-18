@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire de Paiement</title>
+  <style>
+    :root {
+      --bg-start: #edf2f7;
+      --bg-end: #ffffff;
+      --card-bg: #ffffff;
+      --primary: #2c7a7b;
+      --primary-light: #38b2ac;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --border: #e2e8f0;
+      --shadow: 0 18px 50px rgba(45, 55, 72, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      background: linear-gradient(160deg, var(--bg-start), var(--bg-end));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .container {
+      width: min(100%, 520px);
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(66, 153, 225, 0.12);
+      padding: 36px;
+    }
+
+    .container h1 {
+      margin: 0 0 24px;
+      font-size: clamp(1.8rem, 2vw, 2.4rem);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    label {
+      font-size: 0.95rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fbfcfd;
+      color: var(--text);
+      font-size: 0.98rem;
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--primary-light);
+      box-shadow: 0 0 0 4px rgba(56, 178, 172, 0.15);
+    }
+
+    .inline-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .input-suffix {
+      position: relative;
+    }
+
+    .input-suffix input {
+      padding-right: 70px;
+    }
+
+    .suffix {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 20px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+      margin-top: 6px;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 30px rgba(56, 178, 172, 0.22);
+      opacity: 0.97;
+    }
+
+    @media (max-width: 540px) {
+      body {
+        padding: 20px;
+      }
+
+      .container {
+        padding: 28px 20px;
+      }
+
+      .inline-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Formulaire de Paiement</h1>
+    <form>
+      <div class="form-group">
+        <label for="matricule">Matricule</label>
+        <input id="matricule" name="matricule" type="text" placeholder="Entrez votre matricule" required />
+      </div>
+
+      <div class="form-group">
+        <label for="filiere">Filière</label>
+        <select id="filiere" name="filiere" required>
+          <option value="" disabled selected>Choisir une filière</option>
+          <option>Droit</option>
+          <option>Management</option>
+          <option>Ingénierie</option>
+          <option>Art</option>
+          <option>Finance</option>
+          <option>GRH</option>
+          <option>Comptabilité</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="niveau">Niveau</label>
+        <select id="niveau" name="niveau" required>
+          <option value="" disabled selected>Choisir un niveau</option>
+          <option>Licence 1</option>
+          <option>Licence 2</option>
+          <option>Licence 3</option>
+          <option>Master 1</option>
+          <option>Master 2</option>
+        </select>
+      </div>
+
+      <div class="form-group input-suffix">
+        <label for="montant">Montant</label>
+        <input id="montant" name="montant" type="number" placeholder="Entrez le montant" min="0" required />
+        <span class="suffix">FCFA</span>
+      </div>
+
+      <div class="form-group">
+        <label for="objet">Objet</label>
+        <input id="objet" name="objet" type="text" placeholder="Motif du paiement" required />
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input id="date" name="date" type="date" required />
+      </div>
+
+      <button type="submit" class="submit-button">Enregistrer</button>
+    </form>
+  </main>
+</body>
+</html>
