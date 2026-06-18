@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            font-size: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .boxes-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .box-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .box h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .box p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .checkbox-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            display: inline;
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+
+        .box-inscription {
+            border-top: 4px solid #667eea;
+        }
+
+        .box-paiement {
+            border-top: 4px solid #764ba2;
+        }
+
+        .box-bulletin {
+            border-top: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue</h1>
+
+        <div class="boxes-wrapper">
+            <!-- Box Inscription -->
+            <div class="box box-inscription">
+                <div class="box-icon">📝</div>
+                <h2>Inscription</h2>
+                <p>Créez votre compte pour accéder à tous nos services</p>
+                <form id="inscriptionForm">
+                    <div class="form-group">
+                        <label for="nomInscription">Nom Complet</label>
+                        <input type="text" id="nomInscription" name="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInscription">Email</label>
+                        <input type="email" id="emailInscription" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordInscription">Mot de Passe</label>
+                        <input type="password" id="passwordInscription" name="password" placeholder="Votre mot de passe" required>
+                    </div>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+
+            <!-- Box Paiement -->
+            <div class="box box-paiement">
+                <div class="box-icon">💳</div>
+                <h2>Paiement</h2>
+                <p>Effectuez un paiement sécurisé en quelques clics</p>
+                <form id="paiementForm">
+                    <div class="form-group">
+                        <label for="nomPaiement">Nom sur la Carte</label>
+                        <input type="text" id="nomPaiement" name="nomCarte" placeholder="Jean Dupont" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="numeroCarte">Numéro de Carte</label>
+                        <input type="text" id="numeroCarte" name="numeroCarte" placeholder="1234 5678 9012 3456" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="montant">Montant (€)</label>
+                        <input type="text" id="montant" name="montant" placeholder="0.00" required>
+                    </div>
+                    <button type="submit">Payer</button>
+                </form>
+            </div>
+
+            <!-- Box Bulletin -->
+            <div class="box box-bulletin">
+                <div class="box-icon">📰</div>
+                <h2>Bulletin d'Information</h2>
+                <p>Abonnez-vous à notre newsletter pour rester informé</p>
+                <form id="bulletinForm">
+                    <div class="form-group">
+                        <label for="nomBulletin">Prénom</label>
+                        <input type="text" id="nomBulletin" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailBulletin">Email</label>
+                        <input type="email" id="emailBulletin" name="email" placeholder="votre@email.com" required>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="conditionsBulletin" name="conditions" required>
+                        <label for="conditionsBulletin">Je accepte de recevoir les actualités</label>
+                    </div>
+                    <button type="submit">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inscription
+        document.getElementById('inscriptionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nom = document.getElementById('nomInscription').value;
+            alert('Inscription réussie!\nBienvenue ' + nom + '!');
+            this.reset();
+        });
+
+        // Paiement
+        document.getElementById('paiementForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nom = document.getElementById('nomPaiement').value;
+            const montant = document.getElementById('montant').value;
+            alert('Paiement de ' + montant + '€ effectué avec succès!\nMerci ' + nom);
+            this.reset();
+        });
+
+        // Bulletin
+        document.getElementById('bulletinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const prenom = document.getElementById('nomBulletin').value;
+            alert('Merci de votre abonnement ' + prenom + '!\nVous recevrez nos actualités par email.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
